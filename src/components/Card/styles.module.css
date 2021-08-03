@@ -1,0 +1,10 @@
+h2 {
+    color: tomato;
+}
+.card {
+    max-width: 400px;
+}
+.card_img {
+    width: 100%;
+}
+

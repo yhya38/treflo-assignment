@@ -1,0 +1,31 @@
+.modal_container {
+  width: 320px;
+  height: fit-content;
+  padding: 0 10px 10px 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+img {
+  width: 100%;
+}
+.modal_headings {
+  font-size: 14px;
+  font-weight: 600 !important;
+}
+
+.selectSize {
+  display: inline;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.choose {
+  margin: 10px 0px;
+}
+
+.chooseSize {
+  text-transform: capitalize;
+}
+.addToCart {
+  margin: -5px 0px 10px 10px !important;
+}
