@@ -2,11 +2,17 @@ import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import { AppContext } from "../../context/context";
 
-function Cart() {
-  const { basket, total, clearCart, removeItem } =
-    useContext(AppContext);
 
-  const [quantity, setQuantity] = React.useState(1);
+function Cart() {
+  const { basket,  clearCart, removeItem } =
+    useContext(AppContext);
+  
+  const sum = basket.reduce((acc, curr) => {
+    return acc+= curr.price * curr.quantity
+  }, 0)
+  
+  
+
   return (
     <>
       <div className={styles.cartContainer}>
@@ -25,8 +31,9 @@ function Cart() {
           )}
         </div>
         {basket.map((order) => {
+          
           return (
-            <div className={styles.cartWrapper}>
+            <div key={order.id} className={styles.cartWrapper}>
               <div className={styles.cartItems}>
                 <img src={order.img_url} alt={order.name} />
                 <div className={styles.cartData}>
@@ -46,21 +53,23 @@ function Cart() {
                       : "No topings Selected"}
                   </h4>
                   <div className={styles.quantity_btn}>
-                    <button
+                    {/* <button
                       className={styles.btn}
-                      onClick={() => {
-                        quantity > 1 && setQuantity(quantity - 1);
-                      }}
+                      // onClick={() => {
+                      //   order.quantity > 1 && order.setQuantity(order.quantity - 1);
+                      // }}
                     >
                       -
-                    </button>
-                    <p>{quantity}</p>
-                    <button
+                    </button> */}
+                    <h4> Quantity :{order.quantity}</h4>
+                    {/* <button
                       className={styles.btn}
-                      onClick={() => setQuantity(quantity + 1)}
+                      // onClick={() => {
+                      //   order.setQuantity(order.quantity + 1)
+                      // }}
                     >
                       +
-                    </button>
+                    </button> */}
                   </div>
                   <button
                     className={styles.rmv}
@@ -75,7 +84,7 @@ function Cart() {
         })}
 
         <div className={styles.subTotal}>
-          <h3>SubTotal : ₹ {total}</h3>
+          <h3>SubTotal : ₹ {sum}</h3>
           <button className={styles.checkout}>Proceed to Checkout</button>
         </div>
       </div>

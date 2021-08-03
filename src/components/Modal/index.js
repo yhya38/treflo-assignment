@@ -41,6 +41,7 @@ function CardModal({
   const [pizzaSize, setPizzaSize] = useState("");
   const [pizzaToppings, setPizzaToppings] = useState([]);
   const { setBasket, basket } = useContext(AppContext);
+  const [quantity, setQuantity]=useState(1)
   const [item] = size;
   const [topping] = toppings;
 
@@ -58,6 +59,8 @@ function CardModal({
       pizzaSize,
       pizzaToppings,
       description,
+      quantity,
+      setQuantity
     };
     setBasket([...basket, newOrder]);
   };
@@ -87,6 +90,25 @@ function CardModal({
               </h2>
               <h2 className={styles.modal_headings}>Price : INR {price} /-</h2>
               <h2 className={styles.modal_headings}>Rating : {rating}/5</h2>
+              <div className={styles.quantity_btn}>
+                <button
+                  className={styles.btn}
+                  onClick={() => {
+                    quantity > 1 && setQuantity(quantity - 1);
+                  }}
+                >
+                  -
+                </button>
+                <p>{quantity}</p>
+                <button
+                  className={styles.btn}
+                  onClick={() => {
+                    setQuantity(quantity + 1)
+                  }}
+                >
+                  +
+                </button>
+              </div>
               <div>
                 {item.isRadio ? (
                   <div className={styles.choose}>

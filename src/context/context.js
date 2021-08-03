@@ -25,9 +25,9 @@ export function AppProvider({ children }) {
     setBasket([...newItem]);
   };
 
-  const total = basket.reduce((acc, curr) => {
-    return acc + curr.price;
-  }, 0);
+  // const total = basket.reduce((acc, curr) => {
+  //   return acc + curr.price;
+  // }, 0);
 
   useEffect(() => {
     fetchData();
@@ -41,7 +41,7 @@ export function AppProvider({ children }) {
     basket,
     clearCart,
     removeItem,
-    total,
+    // total,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
