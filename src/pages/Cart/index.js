@@ -2,16 +2,12 @@ import React, { useContext } from "react";
 import styles from "./styles.module.css";
 import { AppContext } from "../../context/context";
 
-
 function Cart() {
-  const { basket,  clearCart, removeItem } =
-    useContext(AppContext);
-  
+  const { basket, clearCart, removeItem } = useContext(AppContext);
+
   const sum = basket.reduce((acc, curr) => {
-    return acc+= curr.price * curr.quantity
-  }, 0)
-  
-  
+    return (acc += curr.price * curr.quantity);
+  }, 0);
 
   return (
     <>
@@ -31,7 +27,6 @@ function Cart() {
           )}
         </div>
         {basket.map((order) => {
-          
           return (
             <div key={order.id} className={styles.cartWrapper}>
               <div className={styles.cartItems}>
@@ -50,7 +45,7 @@ function Cart() {
                       ? order.pizzaToppings.map((topping) => (
                           <span>{topping}, </span>
                         ))
-                      : "No topings Selected"}
+                      : " No topings Selected"}
                   </h4>
                   <div className={styles.quantity_btn}>
                     {/* <button
@@ -61,7 +56,7 @@ function Cart() {
                     >
                       -
                     </button> */}
-                    <h4> Quantity :{order.quantity}</h4>
+                    <h4> Quantity : {order.quantity}</h4>
                     {/* <button
                       className={styles.btn}
                       // onClick={() => {
