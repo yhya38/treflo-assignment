@@ -13,7 +13,7 @@ function Header() {
     <div className="header_container">
       <header>
         <h1>
-          <Link to="/">PizzStore</Link>
+          <Link to="/">PizzaStore</Link>
         </h1>
         <Link to="/cart" className="cartLink">
           <ShoppingBasket />
