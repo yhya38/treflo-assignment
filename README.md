@@ -9,3 +9,6 @@
 ### To see the items in the cart click on cart basket logo.
 
 ### Within the cart, it will show the total amount, and also you can delete the particular item and also there is clear button to clear all the items.
+
+
+### Deployed link -> https://pizzastore07.netlify.app/
