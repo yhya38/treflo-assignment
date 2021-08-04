@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { Card } from "../../components";
 import { AppContext } from "../../context/context";
+import Loader from "react-loader-spinner";
 import styles from "./styles.module.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 function Home() {
   const { pizzaList, setPizzaList, cpyPizzaList } = useContext(AppContext);
 
@@ -26,14 +28,21 @@ function Home() {
   if (!pizzaList.length) {
     return (
       <div className={styles.loading}>
-        <h1 className={styles.loading_heading}>Loading...</h1>
+        
+        <Loader
+          type="Oval"
+          color="rgb(19,25,33)"
+          height={100}
+          width={100}
+          // timeout={4000} //3 secs
+        />
       </div>
     );
   }
   return (
     <>
       <div className={styles.background}>
-        {/* <h1 className={styles.background_heading}>Welcome to Pizza Store</h1> */}
+       
       </div>
       <div className={styles.wrapper}>
         <div className={styles.btn_container}>

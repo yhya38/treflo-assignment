@@ -7,8 +7,6 @@ import { AppContext } from "../../context/context";
 function Header() {
   const { basket } =useContext(AppContext);
 
-  
-
   return (
     <div className="header_container">
       <header>

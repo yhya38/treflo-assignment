@@ -41,12 +41,11 @@ function CardModal({
   const [pizzaSize, setPizzaSize] = useState("");
   const [pizzaToppings, setPizzaToppings] = useState([]);
   const { setBasket, basket } = useContext(AppContext);
-  const [quantity, setQuantity]=useState(1)
+  const [quantity, setQuantity] = useState(1);
   const [item] = size;
   const [topping] = toppings;
 
   const idCheck = basket.filter((item) => item.id === id);
-  console.log(idCheck);
 
   const addToCart = () => {
     const newOrder = {
@@ -60,9 +59,10 @@ function CardModal({
       pizzaToppings,
       description,
       quantity,
-      setQuantity
+      setQuantity,
     };
     setBasket([...basket, newOrder]);
+    alert("item added to cart");
   };
 
   return (
@@ -84,30 +84,34 @@ function CardModal({
             <div className={styles.modal_container}>
               <img src={img_url} alt={name} />
               <p>{description}</p>
-              <h2 className={styles.modal_headings}>Name : {name}</h2>
+              <h2 className={styles.modal_headings}>{name}</h2>
               <h2 className={styles.modal_headings}>
-                Type : {isVeg ? "Veg" : "Non Veg"}
+                {isVeg ? "Veg" : "Non Veg"}
               </h2>
-              <h2 className={styles.modal_headings}>Price : INR {price} /-</h2>
-              <h2 className={styles.modal_headings}>Rating : {rating}/5</h2>
+              <h2 className={styles.modal_headings}> ₹ {price} /-</h2>
+              <h2 className={styles.modal_headings}> {rating}/5</h2>
               <div className={styles.quantity_btn}>
-                <button
+                <Button
                   className={styles.btn}
+                  variant="outlined"
+                  color="primary"
                   onClick={() => {
                     quantity > 1 && setQuantity(quantity - 1);
                   }}
                 >
                   -
-                </button>
+                </Button>
                 <p>{quantity}</p>
-                <button
+                <Button
+                  variant="outlined"
+                  color="primary"
                   className={styles.btn}
                   onClick={() => {
-                    setQuantity(quantity + 1)
+                    setQuantity(quantity + 1);
                   }}
                 >
                   +
-                </button>
+                </Button>
               </div>
               <div>
                 {item.isRadio ? (

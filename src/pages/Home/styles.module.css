@@ -42,7 +42,13 @@
   cursor: pointer;
   background-color: white;
   border-radius: 5px;
+  transition: .5s linear;
 }
+.common_btn:hover, .common_btn:focus {
+  background-color: orange;
+  color: white;
+}
+
 .card_container {
   display: flex;
   flex-wrap: wrap;
