@@ -117,8 +117,8 @@ function CardModal({
                 {item.isRadio ? (
                   <div className={styles.choose}>
                     <h2 className={styles.chooseSize}>{item.title}</h2>
-                    {item.items.map((size) => (
-                      <div className={styles.selectSize}>
+                    {item.items.map((size, index) => (
+                      <div key={index} className={styles.selectSize}>
                         {size.size}
                         <input
                           type="radio"
@@ -137,8 +137,8 @@ function CardModal({
                 {topping.isRadio ? (
                   <div className={styles.choose}>
                     <h2 className={styles.chooseSize}>{topping.title}</h2>
-                    {topping.items.map((toppingItem) => (
-                      <div className={styles.chooseSize}>
+                    {topping.items.map((toppingItem, index) => (
+                      <div key={index} className={styles.chooseSize}>
                         {toppingItem.name}{" "}
                         <input
                           type="checkbox"

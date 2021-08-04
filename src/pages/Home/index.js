@@ -28,7 +28,6 @@ function Home() {
   if (!pizzaList.length) {
     return (
       <div className={styles.loading}>
-        
         <Loader
           type="Oval"
           color="rgb(19,25,33)"

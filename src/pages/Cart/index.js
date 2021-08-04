@@ -48,23 +48,7 @@ function Cart() {
                       : " No topings Selected"}
                   </h4>
                   <div className={styles.quantity_btn}>
-                    {/* <button
-                      className={styles.btn}
-                      // onClick={() => {
-                      //   order.quantity > 1 && order.setQuantity(order.quantity - 1);
-                      // }}
-                    >
-                      -
-                    </button> */}
                     <h4> Quantity : {order.quantity}</h4>
-                    {/* <button
-                      className={styles.btn}
-                      // onClick={() => {
-                      //   order.setQuantity(order.quantity + 1)
-                      // }}
-                    >
-                      +
-                    </button> */}
                   </div>
                   <button
                     className={styles.rmv}
